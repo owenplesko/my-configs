@@ -13,7 +13,6 @@ fi
 brew install gcc
 
 # Nerd font: Agave NF Mono
-brew tap homebrew/cask-fonts
 brew install --cask font-agave-nerd-font
 
 # Starship prompt
@@ -35,6 +34,11 @@ CONFIG_DIR="$HOME/my-configs"
 # WezTerm config
 ln -sf "$CONFIG_DIR/wezterm/.wezterm.lua" "$HOME/.wezterm.lua"
 
+# Zsh config
+ln -sf "$CONFIG_DIR/zsh/.zshrc" "$HOME/.zshrc"
+
+
 # Neovim config
 mkdir -p "$HOME/.config"
+rm -rf "$HOME/.config/nvim"
 ln -sf "$CONFIG_DIR/nvim" "$HOME/.config/nvim"

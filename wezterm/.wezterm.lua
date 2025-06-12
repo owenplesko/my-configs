@@ -1,9 +1,15 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
--- shell program
-config.default_prog = { "powershell.exe", "-NoLogo" }
-config.term = "xterm-256color"
+-- detect platform
+local target = wezterm.target_triple
+
+-- conditional shell
+if target:find("windows") then
+  config.default_prog = { "powershell.exe", "-NoLogo" }
+elseif target:find("darwin") then
+  config.default_prog = { "/bin/zsh", "-l" }
+end
 
 -- fonts
 config.font_size = 12
@@ -14,10 +20,12 @@ config.default_cursor_style = 'SteadyBar'
 config.color_scheme = 'Tokyo Night'
 
 -- tabs
-config.hide_tab_bar_if_only_one_tab = true
--- config.use_fancy_tab_bar = false
+config.tab_max_width = 1000
+--config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = true
 
 -- window
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.initial_cols = 80
 config.window_background_opacity = 0.95
 config.window_padding = {
