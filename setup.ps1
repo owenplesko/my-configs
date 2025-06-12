@@ -6,6 +6,9 @@
 scoop bucket add extras
 scoop bucket add nerd-fonts
 
+# gcc
+scoop install gcc
+
 # nerd font
 scoop install nerd-fonts/Agave-NF-Mono
 
