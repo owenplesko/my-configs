@@ -1,0 +1,5 @@
+-- Disable arrow keys (I keep using them instinctually)
+vim.keymap.set("", "<Up>", "<Nop>")
+vim.keymap.set("", "<Down>", "<Nop>")
+vim.keymap.set("", "<Left>", "<Nop>")
+vim.keymap.set("", "<Right>", "<Nop>")
