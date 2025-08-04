@@ -8,24 +8,14 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 # ---- Install packages ----
-
-# GCC
 brew install gcc
-
-# Nerd font: Agave NF Mono
 brew install --cask font-agave-nerd-font
-
-# Starship prompt
 brew install starship
-
-# WezTerm
 brew install --cask wezterm
-
-# Neovim
-brew install neovim
-
-# Git
 brew install git
+brew install neovim
+brew install ripgrep
+brew install fd
 
 # ---- Symlinks ----
 
@@ -36,7 +26,6 @@ ln -sf "$CONFIG_DIR/wezterm/.wezterm.lua" "$HOME/.wezterm.lua"
 
 # Zsh config
 ln -sf "$CONFIG_DIR/zsh/.zshrc" "$HOME/.zshrc"
-
 
 # Neovim config
 mkdir -p "$HOME/.config"
